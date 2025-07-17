@@ -12,14 +12,6 @@
       padding: 0;
     }
 
-    .top-left-img {
-      position: fixed;
-      top: 10px;
-      left: 10px;
-      width: 120px;
-      z-index: 1000;
-    }
-
     .content {
       display: flex;
       flex-direction: column;
@@ -72,13 +64,29 @@
       height: 80px;
       border: none;
     }
+
+.racing-car {
+  position: fixed;
+  top: 10px;
+  left: 100%; /* Start off-screen to the right */
+  width: 120px;
+  z-index: 1000;
+  animation: drive-left 6s linear infinite;
+}
+
+@keyframes drive-left {
+  0% { left: 100%; }
+  100% { left: -200px; }
+}
   </style>
 </head>
 <body>
 
   <!-- F1 Car Top Left -->
-  <img src="assets/f1.png" alt="F1 Car" class="top-left-img" />
+  <img src="assets/f1.png" alt="Racing Car" class="racing-car" />
 
+
+  <!-- Centered Content -->
   <div class="content">
     <!-- Moving Computer on Top -->
     <img src="https://media.giphy.com/media/bGgsc5mWoryfgKBx1u/giphy.gif" alt="Moving Computer" class="computer-img" />
