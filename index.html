@@ -8,17 +8,44 @@
     body {
       font-family: sans-serif;
       background: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    .top-left-img {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      width: 120px;
+      z-index: 1000;
+    }
+
+    .content {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       height: 100vh;
-      margin: 0;
+      text-align: center;
     }
+
+    .computer-img {
+      width: 100px;
+      margin-bottom: 1em;
+      animation: float 2s infinite ease-in-out;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
+    }
+
     h1, p {
       margin: 0.5em;
     }
-    a {
+
+    a.resume-button {
       padding: 0.8em 1.6em;
       background: #222;
       color: white;
@@ -26,12 +53,51 @@
       border-radius: 5px;
       margin-top: 1em;
     }
+
+    .player-container {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      width: 300px;
+      height: 80px;
+      z-index: 9999;
+      background: white;
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    .soundcloud-iframe {
+      width: 100%;
+      height: 80px;
+      border: none;
+    }
   </style>
 </head>
 <body>
-  <h1>Sai Teja Sirivolu</h1>
-  <p>Senior Software Engineer</p>
-  <a href="resume.pdf" target="_blank">View My Resume</a>
+
+  <!-- F1 Car Top Left -->
+  <img src="assets/f1.png" alt="F1 Car" class="top-left-img" />
+
+  <div class="content">
+    <!-- Moving Computer on Top -->
+    <img src="https://media.giphy.com/media/bGgsc5mWoryfgKBx1u/giphy.gif" alt="Moving Computer" class="computer-img" />
+
+    <h1>Sai Teja Sirivolu</h1>
+    <p>Senior Software Engineer</p>
+    <a class="resume-button" href="resume.pdf" target="_blank">View My Resume</a>
+  </div>
+
+  <!-- SoundCloud Player Bottom Right -->
+  <div class="player-container">
+    <iframe class="soundcloud-iframe"
+      scrolling="no"
+      frameborder="no"
+      allow="autoplay"
+      src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2116978149&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=false">
+    </iframe>
+  </div>
+
 </body>
 </html>
 
